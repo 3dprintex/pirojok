@@ -20,33 +20,33 @@ class SiteController extends \common\controllers\BaseController
     /**
      * @inheritdoc
      */
-    public function behaviors()
-    {
-        return [
-            'access' => [
-                'class' => AccessControl::className(),
-                'only' => ['logout', 'signup'],
-                'rules' => [
-                    [
-                        'actions' => ['signup'],
-                        'allow' => true,
-                        'roles' => ['?'],
-                    ],
-                    [
-                        'actions' => ['logout'],
-                        'allow' => true,
-                        'roles' => ['@'],
-                    ],
-                ],
-            ],
-            'verbs' => [
-                'class' => VerbFilter::className(),
-                'actions' => [
-                    'logout' => ['post'],
-                ],
-            ],
-        ];
-    }
+//    public function behaviors()
+//    {
+//        return [
+//            'access' => [
+//                'class' => AccessControl::className(),
+//                'only' => ['logout', 'signup', 'login'],
+//                'rules' => [
+//                    [
+//                        'actions' => ['signup', 'login'],
+//                        'allow' => true,
+//                        'roles' => ['?'],
+//                    ],
+//                    [
+//                        'actions' => ['logout'],
+//                        'allow' => true,
+//                        'roles' => ['@'],
+//                    ],
+//                ],
+//            ],
+//            'verbs' => [
+//                'class' => VerbFilter::className(),
+//                'actions' => [
+//                    'logout' => ['post'],
+//                ],
+//            ],
+//        ];
+//    }
 
     /**
      * @inheritdoc
@@ -72,11 +72,17 @@ class SiteController extends \common\controllers\BaseController
     public function actionLogin()
     {
         if (!\Yii::$app->user->isGuest) {
+            if ($this->isMobileApp()) {
+                return $this->mobileAuthStatus();
+            }
             return $this->goHome();
         }
 
         $model = new LoginForm();
         if ($model->load(Yii::$app->request->post()) && $model->login()) {
+            if ($this->isMobileApp()) {
+                return $this->mobileAuthStatus();
+            }
             return $this->goBack();
         } else {
             return $this->render('login', [
@@ -117,12 +123,34 @@ class SiteController extends \common\controllers\BaseController
 
     public function actionSignup()
     {
+        if (!\Yii::$app->user->isGuest) {
+            if ($this->isMobileApp()) {
+                return $this->mobileAuthStatus();
+            }
+            return $this->goHome();
+        }
+
         $model = new SignupForm();
-        if ($model->load(Yii::$app->request->post())) {
-            if ($user = $model->signup()) {
-                if (Yii::$app->getUser()->login($user)) {
-                    return $this->goHome();
+        try {
+            if ($model->load(Yii::$app->request->post())) {
+                if ($user = $model->signup()) {
+                    if (Yii::$app->getUser()->login($user)) {
+                        if ($this->isMobileApp()) {
+                            return $this->mobileAuthStatus();
+                        }
+                        return $this->goHome();
+                    }
                 }
+                if ($this->isMobileApp()) {
+                    return $this->mobileUnAuthStatus('TODO: ошибка регистрации');
+                }
+            }
+        } catch (\Exception $e) {
+            if ($this->isMobileApp()) {
+                return $this->mobileUnAuthStatus($e->getMessage());
+            }
+            else {
+                throw $e;
             }
         }
 

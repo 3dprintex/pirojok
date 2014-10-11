@@ -28,6 +28,21 @@ return [
         'errorHandler' => [
             'errorAction' => 'site/error',
         ],
+        'urlManager' => array(
+            'enablePrettyUrl' => true,
+//            'enableStrictParsing' => true,
+            'showScriptName' => false,
+            'rules' => [
+                '' => 'site/index',
+                'login' => 'site/login',
+                'logout' => 'site/logout',
+                'signup' => 'site/signup',
+//                ['class' => 'yii\rest\UrlRule', 'controller' => 'site'],
+//                'module/<module:\w+>/<controller:\w+>/<action:\w+>' => '<module>/<controller>/<action>',
+//                '<controller:\w+>/<action:\w+>' => '<controller>/<action>',
+//                'site/<action:\w+>' => '<action>',
+            ],
+        ),
     ],
     'params' => $params,
 ];
