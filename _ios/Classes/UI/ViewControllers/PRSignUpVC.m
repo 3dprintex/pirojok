@@ -22,9 +22,6 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    [[PRModel sharedInstance] preSignUpWithCompletion:^(BOOL success) {
-        int sdf = 0;
-    }];
 }
 
 -(void)viewDidAppear:(BOOL)animated {
@@ -39,7 +36,12 @@
 
 - (IBAction)_signUpTap:(id)sender {
     [[PRModel sharedInstance] signUpWithLogin:self.login.text andPassword:self.password.text andUsername:self.name.text completion:^(BOOL success) {
-        int sdf = 0;
+        if (success) {
+            [self dismissViewControllerAnimated:YES completion:nil];
+        } else {
+            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"" message:@"Error" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
+            [alert show];
+        }
     }];
 }
 

@@ -46,8 +46,9 @@ static PRModel *_sharedInstance = nil;
     data.password = password;
     data.username = username;
     [self.network postWithUrlString:kSignUp onSuccess:^(PRResponseData *responseData) {
+        BOOL auth = [self _isAuthResponse:responseData.getJSONData];
         if (completion) {
-            completion(YES);
+            completion(auth);
         }
     } onError:^(NSError *error) {
         if (completion) {
@@ -62,15 +63,9 @@ static PRModel *_sharedInstance = nil;
     data.password = password;
     [self.network postWithUrlString:kSignIn onSuccess:^(PRResponseData *responseData) {
         NSDictionary *response = responseData.getJSONData;
-        BOOL auth = NO;
-        if ([response[@"status"] isEqualToString:@"auth"]) {
-            _user = [PRUser createWithDictionary:response];
-            auth = YES;
-        }
+        BOOL auth = [self _isAuthResponse:response];
         if (completion) {
-            completion(YES);
-        } else {
-            completion(NO);
+            completion(auth);
         }
     } onError:^(NSError *error) {
         if (completion) {
@@ -124,6 +119,15 @@ static PRModel *_sharedInstance = nil;
         return YES;
     }
     return NO;
+}
+
+-(BOOL)_isAuthResponse:(NSDictionary *)response {
+    BOOL auth = NO;
+    if ([response[@"status"] isEqualToString:@"auth"]) {
+        _user = [PRUser createWithDictionary:response];
+        auth = YES;
+    }
+    return auth;
 }
 
 @end
