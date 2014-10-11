@@ -142,7 +142,7 @@ class SiteController extends \common\controllers\BaseController
                     }
                 }
                 if ($this->isMobileApp()) {
-                    return $this->mobileUnAuthStatus('TODO: ошибка регистрации');
+                    return $this->mobileUnAuthStatus($model->getErrors());
                 }
             }
         } catch (\Exception $e) {
