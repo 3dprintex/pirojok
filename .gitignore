@@ -22,3 +22,9 @@ composer.phar
 phpunit.phar
 # local phpunit config
 /phpunit.xml
+_ios/Pirojok.xcodeproj/project.xcworkspace/contents.xcworkspacedata
+_ios/Pirojok.xcodeproj/project.xcworkspace/xcshareddata/Pirojok.xccheckout
+_ios/Pirojok.xcodeproj/project.xcworkspace/xcuserdata/slavabulgakov.xcuserdatad/UserInterfaceState.xcuserstate
+_ios/Pirojok.xcodeproj/project.xcworkspace/xcuserdata/slavabulgakov.xcuserdatad/WorkspaceSettings.xcsettings
+_ios/Pirojok.xcodeproj/xcuserdata/slavabulgakov.xcuserdatad/xcschemes/Pirojok.xcscheme
+_ios/Pirojok.xcodeproj/xcuserdata/slavabulgakov.xcuserdatad/xcschemes/xcschememanagement.plist

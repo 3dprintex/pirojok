@@ -8,6 +8,7 @@
 
 #import "PRSendVC.h"
 #import "UIImage+MDQRCode.h"
+#import "PRModel.h"
 
 @interface PRSendVC ()
 

@@ -1,5 +1,5 @@
 //
-//  MainVC.h
+//  PRBaseVC.h
 //  Pirojok
 //
 //  Created by Slava Bulgakov on 11.10.14.
@@ -7,8 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "PRBaseVC.h"
 
-@interface PRMainVC : PRBaseVC
+@interface PRBaseVC : UIViewController
+
+-(void)showActivity;
+-(void)hideActivity;
 
 @end

@@ -7,6 +7,7 @@
 //
 
 #import "PRMainVC.h"
+#import "PRModel.h"
 
 @interface PRMainVC ()
 
@@ -16,7 +17,13 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    [self showActivity];
+    [[PRModel sharedInstance] checkAuth:^(BOOL success) {
+        if (!success) {
+            [self performSegueWithIdentifier:@"signIn" sender:self];
+        }
+        [self hideActivity];
+    }];
 }
 
 - (void)didReceiveMemoryWarning {

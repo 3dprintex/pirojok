@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6245" systemVersion="14A386a" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="Cz8-Is-wks">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6245" systemVersion="14A388a" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="Cz8-Is-wks">
     <dependencies>
         <deployment defaultVersion="1808" identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6238"/>
@@ -27,7 +27,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="224.79999999999998" y="-4.7333333333333334"/>
+            <point key="canvasLocation" x="183" y="703"/>
         </scene>
         <!--ReceiveVC-->
         <scene sceneID="rT0-6S-fCj">
@@ -42,7 +42,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="t2r-iA-FXE" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="225.59999999999999" y="700.5333333333333"/>
+            <point key="canvasLocation" x="184" y="1408"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Rl1-7K-LyW">
@@ -53,12 +53,12 @@
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
-                        <segue destination="BIB-fM-A2S" kind="relationship" relationship="rootViewController" id="d85-bM-qZo"/>
+                        <segue destination="BIB-fM-A2S" kind="relationship" relationship="rootViewController" id="Gzh-xl-Ah1"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cab-f4-erJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-752" y="348.37333333333333"/>
+            <point key="canvasLocation" x="-1108" y="353"/>
         </scene>
         <!--MainVC-->
         <scene sceneID="kR2-rD-gE7">
@@ -92,10 +92,148 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" id="XlX-hP-GQW"/>
+                    <connections>
+                        <segue destination="Ol1-JH-uBE" kind="modal" identifier="signIn" id="yZD-vw-NOL"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HwV-3R-SXM" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-254.40000000000001" y="348.37333333333333"/>
+            <point key="canvasLocation" x="-504" y="353"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="akO-2L-OIr">
+            <objects>
+                <navigationController id="Ol1-JH-uBE" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="P25-Os-xBh">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="7Sp-Eq-XJf" kind="relationship" relationship="rootViewController" id="O0q-n2-s0O"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dg2-Sp-Qgh" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="184" y="20"/>
+        </scene>
+        <!--Sign InVC-->
+        <scene sceneID="eIX-NK-Qvh">
+            <objects>
+                <viewController id="7Sp-Eq-XJf" customClass="PRSignInVC" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="ioU-zD-obj">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="velaskes@mailinator.com" borderStyle="roundedRect" placeholder="логин" minimumFontSize="17" id="Jfw-UN-wOp">
+                                <rect key="frame" x="16" y="90" width="288" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" returnKeyType="next"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="123456" borderStyle="roundedRect" placeholder="пароль" minimumFontSize="17" id="yRe-5d-ZPt">
+                                <rect key="frame" x="16" y="135" width="288" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" returnKeyType="join" secureTextEntry="YES"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="JYS-gv-ZCz">
+                                <rect key="frame" x="85" y="227" width="150" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Зарегистрироваться">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="yud-DY-CMG" kind="push" id="ggu-df-Y3B"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="Bjm-zz-Ee6">
+                                <rect key="frame" x="138" y="189" width="44" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Войти">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="buttonTap:" destination="7Sp-Eq-XJf" eventType="touchUpInside" id="t16-f5-8Cq"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="7ci-bC-plh"/>
+                    <connections>
+                        <outlet property="login" destination="Jfw-UN-wOp" id="4TT-Cb-uBW"/>
+                        <outlet property="password" destination="yRe-5d-ZPt" id="D4F-z0-3dK"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="9BX-EY-Hd9" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="697" y="20"/>
+        </scene>
+        <!--Sign UpVC-->
+        <scene sceneID="0qt-Fn-BHN">
+            <objects>
+                <viewController id="yud-DY-CMG" customClass="PRSignUpVC" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="SnH-HZ-zVE">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" clipsSubviews="YES" tag="501" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="velaskes@mailinator.com" borderStyle="roundedRect" placeholder="e-mail" minimumFontSize="17" id="EMA-aC-blh">
+                                <rect key="frame" x="16" y="136" width="288" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" keyboardType="emailAddress" returnKeyType="next"/>
+                                <connections>
+                                    <outlet property="delegate" destination="yud-DY-CMG" id="7kT-s9-HhW"/>
+                                </connections>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" tag="500" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="slava" borderStyle="roundedRect" placeholder="имя" minimumFontSize="17" id="39a-uD-QYk">
+                                <rect key="frame" x="16" y="98" width="288" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" returnKeyType="next"/>
+                                <connections>
+                                    <outlet property="delegate" destination="yud-DY-CMG" id="aT4-iv-BzR"/>
+                                </connections>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" tag="502" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="123456" borderStyle="roundedRect" placeholder="пароль" minimumFontSize="17" id="Ls9-xa-qEG">
+                                <rect key="frame" x="16" y="174" width="288" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" returnKeyType="join" secureTextEntry="YES"/>
+                                <connections>
+                                    <outlet property="delegate" destination="yud-DY-CMG" id="2EO-EK-gWi"/>
+                                </connections>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Регистрация" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="1Lw-Cv-2GJ">
+                                <rect key="frame" x="109" y="69" width="103" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="84b-iu-HEl">
+                                <rect key="frame" x="85" y="212" width="150" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Зарегистрироваться">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="_signUpTap:" destination="yud-DY-CMG" eventType="touchUpInside" id="2xG-Zq-Eqg"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="0lM-4w-OsT"/>
+                    <connections>
+                        <outlet property="login" destination="EMA-aC-blh" id="kSH-NG-Jpi"/>
+                        <outlet property="name" destination="39a-uD-QYk" id="Op8-bq-W0s"/>
+                        <outlet property="password" destination="Ls9-xa-qEG" id="bsm-7E-Qy8"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="gfc-5h-5pm" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1207" y="20"/>
         </scene>
     </scenes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">

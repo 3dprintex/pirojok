@@ -1,14 +1,13 @@
 //
-//  MainVC.h
+//  PRURLConnection.m
 //  Pirojok
 //
 //  Created by Slava Bulgakov on 11.10.14.
 //  Copyright (c) 2014 Slava Bulgakov. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
-#import "PRBaseVC.h"
+#import "PRURLConnection.h"
 
-@interface PRMainVC : PRBaseVC
+@implementation PRURLConnection
 
 @end

@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		DE02AB9419E9A6B000433556 /* PRSignInData.m in Sources */ = {isa = PBXBuildFile; fileRef = DE02AB9319E9A6B000433556 /* PRSignInData.m */; };
+		DE02AB9719E9AC5E00433556 /* PRBaseVC.m in Sources */ = {isa = PBXBuildFile; fileRef = DE02AB9619E9AC5E00433556 /* PRBaseVC.m */; };
+		DE02AB9E19E9ACA200433556 /* PRActivity.m in Sources */ = {isa = PBXBuildFile; fileRef = DE02AB9D19E9ACA200433556 /* PRActivity.m */; };
+		DE02ABA019E9B52C00433556 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DE02AB9F19E9B52C00433556 /* CoreGraphics.framework */; };
+		DE02ABA719E9B79000433556 /* PRUser.m in Sources */ = {isa = PBXBuildFile; fileRef = DE02ABA619E9B79000433556 /* PRUser.m */; };
 		DE2B729B19E92D1B0072F59A /* bitstream.c in Sources */ = {isa = PBXBuildFile; fileRef = DE2B728B19E92D1B0072F59A /* bitstream.c */; };
 		DE2B729C19E92D1B0072F59A /* mask.c in Sources */ = {isa = PBXBuildFile; fileRef = DE2B728D19E92D1B0072F59A /* mask.c */; };
 		DE2B729D19E92D1B0072F59A /* qrencode.c in Sources */ = {isa = PBXBuildFile; fileRef = DE2B728F19E92D1B0072F59A /* qrencode.c */; };
@@ -18,16 +23,35 @@
 		DE2B72A519E9304F0072F59A /* PRMainVC.m in Sources */ = {isa = PBXBuildFile; fileRef = DE2B72A419E9304F0072F59A /* PRMainVC.m */; };
 		DE2B72A819E9308E0072F59A /* PRReceiveVC.m in Sources */ = {isa = PBXBuildFile; fileRef = DE2B72A719E9308E0072F59A /* PRReceiveVC.m */; };
 		DE2B72AB19E937EB0072F59A /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DE2B72AA19E937EA0072F59A /* AVFoundation.framework */; };
+		DE4ED44319E9777800E7D4FD /* PRCommon.m in Sources */ = {isa = PBXBuildFile; fileRef = DE4ED44219E9777800E7D4FD /* PRCommon.m */; };
+		DE4ED45319E97EBB00E7D4FD /* PRRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = DE4ED44A19E97EBB00E7D4FD /* PRRequest.m */; };
+		DE4ED45419E97EBB00E7D4FD /* PRRequestData.m in Sources */ = {isa = PBXBuildFile; fileRef = DE4ED44C19E97EBB00E7D4FD /* PRRequestData.m */; };
+		DE4ED45519E97EBB00E7D4FD /* PRResponseData.m in Sources */ = {isa = PBXBuildFile; fileRef = DE4ED44E19E97EBB00E7D4FD /* PRResponseData.m */; };
+		DE4ED45619E97EBB00E7D4FD /* PRURLConnection.m in Sources */ = {isa = PBXBuildFile; fileRef = DE4ED45019E97EBB00E7D4FD /* PRURLConnection.m */; };
+		DE4ED45719E97EBB00E7D4FD /* PRNetwork.m in Sources */ = {isa = PBXBuildFile; fileRef = DE4ED45219E97EBB00E7D4FD /* PRNetwork.m */; };
+		DE4ED45B19E97F4C00E7D4FD /* PRSignUpData.m in Sources */ = {isa = PBXBuildFile; fileRef = DE4ED45A19E97F4C00E7D4FD /* PRSignUpData.m */; };
+		DE4ED45F19E9811200E7D4FD /* NSString+URLEncoding.m in Sources */ = {isa = PBXBuildFile; fileRef = DE4ED45E19E9811200E7D4FD /* NSString+URLEncoding.m */; };
+		DE69D20519E94A6D007FCB9A /* PRModel.m in Sources */ = {isa = PBXBuildFile; fileRef = DE69D20419E94A6D007FCB9A /* PRModel.m */; };
+		DE69D20A19E94E94007FCB9A /* PRSignInVC.m in Sources */ = {isa = PBXBuildFile; fileRef = DE69D20919E94E94007FCB9A /* PRSignInVC.m */; };
+		DE69D20D19E94F4E007FCB9A /* PRSignUpVC.m in Sources */ = {isa = PBXBuildFile; fileRef = DE69D20C19E94F4E007FCB9A /* PRSignUpVC.m */; };
 		DECCD3AB19E927E300EC0B4E /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = DECCD39E19E927E300EC0B4E /* AppDelegate.m */; };
 		DECCD3AC19E927E300EC0B4E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = DECCD39F19E927E300EC0B4E /* main.m */; };
 		DECCD3AD19E927E300EC0B4E /* PRSendVC.m in Sources */ = {isa = PBXBuildFile; fileRef = DECCD3A319E927E300EC0B4E /* PRSendVC.m */; };
 		DECCD3AE19E927E300EC0B4E /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = DECCD3A519E927E300EC0B4E /* LaunchScreen.xib */; };
 		DECCD3AF19E927E300EC0B4E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DECCD3A719E927E300EC0B4E /* Main.storyboard */; };
 		DECCD3B019E927E300EC0B4E /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DECCD3A919E927E300EC0B4E /* Images.xcassets */; };
-		DECCD3B119E927E300EC0B4E /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = DECCD3AA19E927E300EC0B4E /* Info.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		DE02AB9219E9A6B000433556 /* PRSignInData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PRSignInData.h; sourceTree = "<group>"; };
+		DE02AB9319E9A6B000433556 /* PRSignInData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PRSignInData.m; sourceTree = "<group>"; };
+		DE02AB9519E9AC5E00433556 /* PRBaseVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PRBaseVC.h; sourceTree = "<group>"; };
+		DE02AB9619E9AC5E00433556 /* PRBaseVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PRBaseVC.m; sourceTree = "<group>"; };
+		DE02AB9C19E9ACA200433556 /* PRActivity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PRActivity.h; sourceTree = "<group>"; };
+		DE02AB9D19E9ACA200433556 /* PRActivity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PRActivity.m; sourceTree = "<group>"; };
+		DE02AB9F19E9B52C00433556 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		DE02ABA519E9B79000433556 /* PRUser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PRUser.h; sourceTree = "<group>"; };
+		DE02ABA619E9B79000433556 /* PRUser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PRUser.m; sourceTree = "<group>"; };
 		DE2B728B19E92D1B0072F59A /* bitstream.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = bitstream.c; sourceTree = "<group>"; };
 		DE2B728C19E92D1B0072F59A /* bitstream.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = bitstream.h; sourceTree = "<group>"; };
 		DE2B728D19E92D1B0072F59A /* mask.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = mask.c; sourceTree = "<group>"; };
@@ -49,6 +73,29 @@
 		DE2B72A619E9308E0072F59A /* PRReceiveVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PRReceiveVC.h; sourceTree = "<group>"; };
 		DE2B72A719E9308E0072F59A /* PRReceiveVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PRReceiveVC.m; sourceTree = "<group>"; };
 		DE2B72AA19E937EA0072F59A /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		DE4ED44119E9777800E7D4FD /* PRCommon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PRCommon.h; sourceTree = "<group>"; };
+		DE4ED44219E9777800E7D4FD /* PRCommon.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PRCommon.m; sourceTree = "<group>"; };
+		DE4ED44919E97EBB00E7D4FD /* PRRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PRRequest.h; sourceTree = "<group>"; };
+		DE4ED44A19E97EBB00E7D4FD /* PRRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PRRequest.m; sourceTree = "<group>"; };
+		DE4ED44B19E97EBB00E7D4FD /* PRRequestData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PRRequestData.h; sourceTree = "<group>"; };
+		DE4ED44C19E97EBB00E7D4FD /* PRRequestData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PRRequestData.m; sourceTree = "<group>"; };
+		DE4ED44D19E97EBB00E7D4FD /* PRResponseData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PRResponseData.h; sourceTree = "<group>"; };
+		DE4ED44E19E97EBB00E7D4FD /* PRResponseData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PRResponseData.m; sourceTree = "<group>"; };
+		DE4ED44F19E97EBB00E7D4FD /* PRURLConnection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PRURLConnection.h; sourceTree = "<group>"; };
+		DE4ED45019E97EBB00E7D4FD /* PRURLConnection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PRURLConnection.m; sourceTree = "<group>"; };
+		DE4ED45119E97EBB00E7D4FD /* PRNetwork.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PRNetwork.h; sourceTree = "<group>"; };
+		DE4ED45219E97EBB00E7D4FD /* PRNetwork.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PRNetwork.m; sourceTree = "<group>"; };
+		DE4ED45919E97F4C00E7D4FD /* PRSignUpData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PRSignUpData.h; sourceTree = "<group>"; };
+		DE4ED45A19E97F4C00E7D4FD /* PRSignUpData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PRSignUpData.m; sourceTree = "<group>"; };
+		DE4ED45D19E9811200E7D4FD /* NSString+URLEncoding.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+URLEncoding.h"; sourceTree = "<group>"; };
+		DE4ED45E19E9811200E7D4FD /* NSString+URLEncoding.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+URLEncoding.m"; sourceTree = "<group>"; };
+		DE69D20319E94A6D007FCB9A /* PRModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PRModel.h; sourceTree = "<group>"; };
+		DE69D20419E94A6D007FCB9A /* PRModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PRModel.m; sourceTree = "<group>"; };
+		DE69D20719E94BBA007FCB9A /* Pirojok-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Pirojok-Prefix.pch"; sourceTree = "<group>"; };
+		DE69D20819E94E94007FCB9A /* PRSignInVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PRSignInVC.h; sourceTree = "<group>"; };
+		DE69D20919E94E94007FCB9A /* PRSignInVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PRSignInVC.m; sourceTree = "<group>"; };
+		DE69D20B19E94F4E007FCB9A /* PRSignUpVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PRSignUpVC.h; sourceTree = "<group>"; };
+		DE69D20C19E94F4E007FCB9A /* PRSignUpVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PRSignUpVC.m; sourceTree = "<group>"; };
 		DECCD37219E9210A00EC0B4E /* Pirojok.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Pirojok.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DECCD39D19E927E300EC0B4E /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		DECCD39E19E927E300EC0B4E /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -66,6 +113,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DE02ABA019E9B52C00433556 /* CoreGraphics.framework in Frameworks */,
 				DE2B72AB19E937EB0072F59A /* AVFoundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -73,6 +121,24 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		DE02AB9B19E9ACA200433556 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				DE02AB9C19E9ACA200433556 /* PRActivity.h */,
+				DE02AB9D19E9ACA200433556 /* PRActivity.m */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		DE02ABA419E9B79000433556 /* Objects */ = {
+			isa = PBXGroup;
+			children = (
+				DE02ABA519E9B79000433556 /* PRUser.h */,
+				DE02ABA619E9B79000433556 /* PRUser.m */,
+			);
+			path = Objects;
+			sourceTree = "<group>";
+		};
 		DE2B728819E92D1B0072F59A /* Labrary */ = {
 			isa = PBXGroup;
 			children = (
@@ -115,9 +181,58 @@
 		DE2B72AC19E93BFD0072F59A /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				DE02AB9F19E9B52C00433556 /* CoreGraphics.framework */,
 				DE2B72AA19E937EA0072F59A /* AVFoundation.framework */,
 			);
 			path = Frameworks;
+			sourceTree = "<group>";
+		};
+		DE4ED44719E97EBB00E7D4FD /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				DE4ED45819E97F2600E7D4FD /* Objects */,
+				DE4ED44819E97EBB00E7D4FD /* Base */,
+				DE4ED45119E97EBB00E7D4FD /* PRNetwork.h */,
+				DE4ED45219E97EBB00E7D4FD /* PRNetwork.m */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		DE4ED44819E97EBB00E7D4FD /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				DE4ED44919E97EBB00E7D4FD /* PRRequest.h */,
+				DE4ED44A19E97EBB00E7D4FD /* PRRequest.m */,
+				DE4ED44B19E97EBB00E7D4FD /* PRRequestData.h */,
+				DE4ED44C19E97EBB00E7D4FD /* PRRequestData.m */,
+				DE4ED44D19E97EBB00E7D4FD /* PRResponseData.h */,
+				DE4ED44E19E97EBB00E7D4FD /* PRResponseData.m */,
+				DE4ED44F19E97EBB00E7D4FD /* PRURLConnection.h */,
+				DE4ED45019E97EBB00E7D4FD /* PRURLConnection.m */,
+			);
+			path = Base;
+			sourceTree = "<group>";
+		};
+		DE4ED45819E97F2600E7D4FD /* Objects */ = {
+			isa = PBXGroup;
+			children = (
+				DE4ED45919E97F4C00E7D4FD /* PRSignUpData.h */,
+				DE4ED45A19E97F4C00E7D4FD /* PRSignUpData.m */,
+				DE02AB9219E9A6B000433556 /* PRSignInData.h */,
+				DE02AB9319E9A6B000433556 /* PRSignInData.m */,
+			);
+			path = Objects;
+			sourceTree = "<group>";
+		};
+		DE69D20219E94A5A007FCB9A /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				DE02ABA419E9B79000433556 /* Objects */,
+				DE4ED44719E97EBB00E7D4FD /* Network */,
+				DE69D20319E94A6D007FCB9A /* PRModel.h */,
+				DE69D20419E94A6D007FCB9A /* PRModel.m */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 		DECCD36919E9210A00EC0B4E = {
@@ -141,6 +256,7 @@
 		DECCD39B19E927E300EC0B4E /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				DE69D20219E94A5A007FCB9A /* Model */,
 				DE2B728819E92D1B0072F59A /* Labrary */,
 				DECCD39C19E927E300EC0B4E /* Main */,
 				DECCD3A019E927E300EC0B4E /* UI */,
@@ -151,9 +267,14 @@
 		DECCD39C19E927E300EC0B4E /* Main */ = {
 			isa = PBXGroup;
 			children = (
+				DE4ED45D19E9811200E7D4FD /* NSString+URLEncoding.h */,
+				DE4ED45E19E9811200E7D4FD /* NSString+URLEncoding.m */,
+				DE69D20719E94BBA007FCB9A /* Pirojok-Prefix.pch */,
 				DECCD39D19E927E300EC0B4E /* AppDelegate.h */,
 				DECCD39E19E927E300EC0B4E /* AppDelegate.m */,
 				DECCD39F19E927E300EC0B4E /* main.m */,
+				DE4ED44119E9777800E7D4FD /* PRCommon.h */,
+				DE4ED44219E9777800E7D4FD /* PRCommon.m */,
 			);
 			path = Main;
 			sourceTree = "<group>";
@@ -161,6 +282,7 @@
 		DECCD3A019E927E300EC0B4E /* UI */ = {
 			isa = PBXGroup;
 			children = (
+				DE02AB9B19E9ACA200433556 /* Views */,
 				DECCD3A119E927E300EC0B4E /* ViewControllers */,
 			);
 			path = UI;
@@ -175,6 +297,12 @@
 				DE2B72A419E9304F0072F59A /* PRMainVC.m */,
 				DE2B72A619E9308E0072F59A /* PRReceiveVC.h */,
 				DE2B72A719E9308E0072F59A /* PRReceiveVC.m */,
+				DE69D20819E94E94007FCB9A /* PRSignInVC.h */,
+				DE69D20919E94E94007FCB9A /* PRSignInVC.m */,
+				DE69D20B19E94F4E007FCB9A /* PRSignUpVC.h */,
+				DE69D20C19E94F4E007FCB9A /* PRSignUpVC.m */,
+				DE02AB9519E9AC5E00433556 /* PRBaseVC.h */,
+				DE02AB9619E9AC5E00433556 /* PRBaseVC.m */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -247,7 +375,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DECCD3B119E927E300EC0B4E /* Info.plist in Resources */,
 				DECCD3B019E927E300EC0B4E /* Images.xcassets in Resources */,
 				DECCD3AE19E927E300EC0B4E /* LaunchScreen.xib in Resources */,
 				DECCD3AF19E927E300EC0B4E /* Main.storyboard in Resources */,
@@ -261,19 +388,34 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DE4ED45B19E97F4C00E7D4FD /* PRSignUpData.m in Sources */,
 				DE2B729D19E92D1B0072F59A /* qrencode.c in Sources */,
 				DE2B729E19E92D1B0072F59A /* qrinput.c in Sources */,
+				DE4ED45519E97EBB00E7D4FD /* PRResponseData.m in Sources */,
+				DE02ABA719E9B79000433556 /* PRUser.m in Sources */,
 				DE2B72A219E92D1B0072F59A /* UIImage+MDQRCode.m in Sources */,
+				DE4ED45319E97EBB00E7D4FD /* PRRequest.m in Sources */,
+				DE4ED45F19E9811200E7D4FD /* NSString+URLEncoding.m in Sources */,
 				DE2B729C19E92D1B0072F59A /* mask.c in Sources */,
+				DE02AB9E19E9ACA200433556 /* PRActivity.m in Sources */,
 				DECCD3AD19E927E300EC0B4E /* PRSendVC.m in Sources */,
 				DE2B72A019E92D1B0072F59A /* rscode.c in Sources */,
 				DECCD3AC19E927E300EC0B4E /* main.m in Sources */,
+				DE4ED45419E97EBB00E7D4FD /* PRRequestData.m in Sources */,
+				DE4ED45719E97EBB00E7D4FD /* PRNetwork.m in Sources */,
 				DE2B72A819E9308E0072F59A /* PRReceiveVC.m in Sources */,
+				DE4ED45619E97EBB00E7D4FD /* PRURLConnection.m in Sources */,
+				DE69D20D19E94F4E007FCB9A /* PRSignUpVC.m in Sources */,
 				DECCD3AB19E927E300EC0B4E /* AppDelegate.m in Sources */,
+				DE69D20A19E94E94007FCB9A /* PRSignInVC.m in Sources */,
+				DE02AB9419E9A6B000433556 /* PRSignInData.m in Sources */,
+				DE02AB9719E9AC5E00433556 /* PRBaseVC.m in Sources */,
 				DE2B729B19E92D1B0072F59A /* bitstream.c in Sources */,
 				DE2B72A519E9304F0072F59A /* PRMainVC.m in Sources */,
 				DE2B72A119E92D1B0072F59A /* split.c in Sources */,
 				DE2B729F19E92D1B0072F59A /* qrspec.c in Sources */,
+				DE69D20519E94A6D007FCB9A /* PRModel.m in Sources */,
+				DE4ED44319E9777800E7D4FD /* PRCommon.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

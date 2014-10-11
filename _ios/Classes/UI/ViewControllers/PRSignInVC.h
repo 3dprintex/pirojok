@@ -1,5 +1,5 @@
 //
-//  MainVC.h
+//  PRSignInVC.h
 //  Pirojok
 //
 //  Created by Slava Bulgakov on 11.10.14.
@@ -7,8 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "PRBaseVC.h"
 
-@interface PRMainVC : PRBaseVC
+@interface PRSignInVC : UIViewController
 
 @end
