@@ -65,6 +65,20 @@ class MailController extends \common\controllers\BaseController
         $model = new AddMailForm();
         try {
             if ($model->load(Yii::$app->request->post())) {
+                if ($this->isMobileApp()) {
+                    $files = $_POST['AddMailForm']['images'];
+                    unset($_POST['AddMailForm']['images']);
+                    foreach($files as $k=>$file) {
+                        $ff = base64_decode($file);
+                        $tmpName = tempnam(sys_get_temp_dir(), 'img');
+                        file_put_contents($tmpName, $ff);
+                        $_FILES['AddMailForm']['name']['images'][$k] = $k;
+                        $_FILES['AddMailForm']['type']['images'][$k] = mime_content_type($tmpName);
+                        $_FILES['AddMailForm']['tmp_name']['images'][$k] = $tmpName;
+                        $_FILES['AddMailForm']['size']['images'][$k] = filesize($tmpName);
+                        $_FILES['AddMailForm']['error']['images'][$k] = 0;
+                    }
+                }
                 $mail = $model->addNewMail();
                 if (!$mail->hasErrors()) {
                         return $this->goPayForMail($mail);

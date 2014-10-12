@@ -96,4 +96,8 @@ class Mail extends ActiveRecord
         ];
         return $data;
     }
+
+    public function getImages() {
+        return [];
+    }
 }
