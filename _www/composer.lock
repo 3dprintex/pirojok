@@ -4,7 +4,7 @@
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "93ba06c7f55c134fcfc2a4a38a89049e",
+    "hash": "c94c6bb95b780c96036227704bd6c7ff",
     "packages": [
         {
             "name": "bower-asset/bootstrap",
@@ -312,6 +312,56 @@
             "time": "2013-11-30 08:25:19"
         },
         {
+            "name": "rmccue/requests",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/rmccue/Requests.git",
+                "reference": "b398534f8e77bd6a51b7c0e79236bfd6152b8247"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/rmccue/Requests/zipball/b398534f8e77bd6a51b7c0e79236bfd6152b8247",
+                "reference": "b398534f8e77bd6a51b7c0e79236bfd6152b8247",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.2"
+            },
+            "require-dev": {
+                "requests/test-server": "dev-master",
+                "satooshi/php-coveralls": "dev-master"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-0": {
+                    "Requests": "library/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "ISC"
+            ],
+            "authors": [
+                {
+                    "name": "Ryan McCue",
+                    "homepage": "http://ryanmccue.info"
+                }
+            ],
+            "description": "A HTTP library written in PHP, for human beings.",
+            "homepage": "http://github.com/rmccue/Requests",
+            "keywords": [
+                "curl",
+                "fsockopen",
+                "http",
+                "idna",
+                "ipv6",
+                "iri",
+                "sockets"
+            ],
+            "time": "2014-05-18 05:10:05"
+        },
+        {
             "name": "swiftmailer/swiftmailer",
             "version": "dev-master",
             "source": {
@@ -364,17 +414,59 @@
             "time": "2014-10-05 19:53:07"
         },
         {
+            "name": "yandex-money/yandex-money-sdk-php",
+            "version": "v3.0.3",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/yandex-money/yandex-money-sdk-php.git",
+                "reference": "8961db593f502a15d1ce11bf08479a870d343258"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/yandex-money/yandex-money-sdk-php/zipball/8961db593f502a15d1ce11bf08479a870d343258",
+                "reference": "8961db593f502a15d1ce11bf08479a870d343258",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.0",
+                "rmccue/requests": ">=1.0"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "3.7.*"
+            },
+            "type": "library",
+            "autoload": {
+                "classmap": [
+                    "lib/"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "description": "Yandex.Money API SDK for PHP",
+            "keywords": [
+                "money",
+                "payment",
+                "php",
+                "sdk",
+                "yandex",
+                "yandex.money"
+            ],
+            "time": "2014-10-07 10:16:12"
+        },
+        {
             "name": "yiisoft/yii2",
             "version": "dev-master",
             "source": {
                 "type": "git",
                 "url": "https://github.com/yiisoft/yii2-framework.git",
-                "reference": "bc7873431f5e85c47e989e9f129bb8a0f628d7f3"
+                "reference": "495bd8f8854826986f4389661ae64cd39fdaad1b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/yiisoft/yii2-framework/zipball/bc7873431f5e85c47e989e9f129bb8a0f628d7f3",
-                "reference": "bc7873431f5e85c47e989e9f129bb8a0f628d7f3",
+                "url": "https://api.github.com/repos/yiisoft/yii2-framework/zipball/495bd8f8854826986f4389661ae64cd39fdaad1b",
+                "reference": "495bd8f8854826986f4389661ae64cd39fdaad1b",
                 "shasum": ""
             },
             "require": {
@@ -449,7 +541,7 @@
                 "framework",
                 "yii2"
             ],
-            "time": "2014-10-11 02:33:11"
+            "time": "2014-10-11 13:35:55"
         },
         {
             "name": "yiisoft/yii2-bootstrap",
@@ -852,12 +944,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/yiisoft/yii2-gii.git",
-                "reference": "0d5b86c0d55f534563368081abe9db9296cd7409"
+                "reference": "21fc6f62f94729bbfc8b1c73604dfc0b7779cf9d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/yiisoft/yii2-gii/zipball/0d5b86c0d55f534563368081abe9db9296cd7409",
-                "reference": "0d5b86c0d55f534563368081abe9db9296cd7409",
+                "url": "https://api.github.com/repos/yiisoft/yii2-gii/zipball/21fc6f62f94729bbfc8b1c73604dfc0b7779cf9d",
+                "reference": "21fc6f62f94729bbfc8b1c73604dfc0b7779cf9d",
                 "shasum": ""
             },
             "require": {
@@ -893,7 +985,7 @@
                 "gii",
                 "yii2"
             ],
-            "time": "2014-10-11 02:33:11"
+            "time": "2014-10-11 14:36:48"
         }
     ],
     "aliases": [],

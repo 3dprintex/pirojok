@@ -1,6 +1,7 @@
 <?php
 namespace frontend\controllers;
 
+use common\models\Mail;
 use Yii;
 use frontend\models\AddMailForm;
 
@@ -84,6 +85,13 @@ class MailController extends \common\controllers\BaseController
         return $this->render('add_mail', [
             'model' => $model,
         ]);
+    }
+
+
+    public function actionPay($id)
+    {
+        $model = Mail::findOne(['id'=>(int) $id]);
+        return $this->render('pay', ['model' => $model]);
     }
 
 }

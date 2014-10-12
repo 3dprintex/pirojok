@@ -3,10 +3,14 @@ return [
     'components' => [
         'db' => [
             'class' => 'yii\db\Connection',
-		'dsn' => 'mysql:host=localhost;dbname=pirojok',
-    'username' => 'pirojok',
-    'password' => 'fj47H3ld9sQ',
-    'charset' => 'utf8',
+            'dsn' => 'mysql:host=localhost;dbname=pirojok',
+            'username' => 'pirojok',
+            'password' => 'fj47H3ld9sQ',
+            'charset' => 'utf8',
+        ],
+        'payment' => [
+            'token' => '',
+            'id' => '410012013964899',
         ],
         'mailer' => [
             'class' => 'yii\swiftmailer\Mailer',

@@ -6,33 +6,11 @@ use yii\bootstrap\ActiveForm;
 /* @var $form yii\bootstrap\ActiveForm */
 /* @var $model \frontend\models\SignupForm */
 
-$this->title = 'Add mail';
+$this->title = 'Pay for mail';
 $this->params['breadcrumbs'][] = $this->title;
+$successURL = '';
+$pay_id = Yii::$app->payment->id;
+$amount = 30;
+$target = 'test';
 ?>
-<div class="site-signup">
-    <h1><?= Html::encode($this->title) ?></h1>
-
-    <p>Here must be rule</p>
-
-    <div class="row">
-        <div class="col-lg-5">
-            <?php
-            if ($model->hasErrors()) { //it is necessary to see all the errors for all the files.
-                echo '<pre>';
-                print_r($model->getErrors());
-                echo '</pre>';
-            }
-            ?>
-            <?php $form = ActiveForm::begin(['id' => 'form-mail-add','options' => ['enctype' => 'multipart/form-data']]); ?>
-                <?= $form->field($model, 'mess') ?>
-
-                <?= $form->field($model, 'timeout')->dropDownList(\common\models\Mail::$enum_timeout) ?>
-
-                <?= $form->field($model, 'images[]')->fileInput(['multiple' => '']) ?>
-                <div class="form-group">
-                    <?= Html::submitButton('Create', ['class' => 'btn btn-primary', 'name' => 'send-button']) ?>
-                </div>
-            <?php ActiveForm::end(); ?>
-        </div>
-    </div>
-</div>
+<iframe frameborder="0" allowtransparency="true" scrolling="no" src="https://money.yandex.ru/embed/shop.xml?account=<?=$pay_id?>&quickpay=shop&payment-type-choice=on&writer=seller&targets=<?=$target?>&targets-hint=&default-sum=<?=$amount?>&button-text=01&mail=on&successURL=<?=$successURL?>" width="450" height="198"></iframe>

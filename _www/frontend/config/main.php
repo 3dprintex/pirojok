@@ -44,6 +44,7 @@ return [
 //                'module/<module:\w+>/<controller:\w+>/<action:\w+>' => '<module>/<controller>/<action>',
                 '<action:\w+>' => 'site/<action>',
                 '<controller:\w+>/<action:\w+>' => '<controller>/<action>',
+                '<controller:\w+>/<action:\w+>/<id:\d+>' => '<controller>/<action>',
             ],
         ),
     ],
