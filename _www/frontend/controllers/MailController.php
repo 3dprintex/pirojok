@@ -2,20 +2,12 @@
 namespace frontend\controllers;
 
 use Yii;
-use common\models\LoginForm;
-use frontend\models\PasswordResetRequestForm;
-use frontend\models\ResetPasswordForm;
-use frontend\models\SignupForm;
-use frontend\models\ContactForm;
-use yii\base\InvalidParamException;
-use yii\web\BadRequestHttpException;
-use yii\filters\VerbFilter;
-use yii\filters\AccessControl;
+use frontend\models\AddMailForm;
 
 /**
  * Site controller
  */
-class SiteController extends \common\controllers\BaseController
+class MailController extends \common\controllers\BaseController
 {
     /**
      * @inheritdoc
@@ -51,17 +43,15 @@ class SiteController extends \common\controllers\BaseController
     /**
      * @inheritdoc
      */
-    public function actions()
+    public function beforeAction($action)
     {
-        return [
-            'error' => [
-                'class' => 'yii\web\ErrorAction',
-            ],
-            'captcha' => [
-                'class' => 'yii\captcha\CaptchaAction',
-                'fixedVerifyCode' => YII_ENV_TEST ? 'testme' : null,
-            ],
-        ];
+        if (\Yii::$app->user->isGuest) {
+            if ($this->isMobileApp()) {
+                return $this->mobileAuthStatus();
+            }
+            return $this->goHome();
+        }
+        return parent::beforeAction($action);
     }
 
     public function actionIndex()
@@ -69,131 +59,31 @@ class SiteController extends \common\controllers\BaseController
         return $this->render('index');
     }
 
-    public function actionLogin()
+    public function actionAdd()
     {
-        if (!\Yii::$app->user->isGuest) {
-            if ($this->isMobileApp()) {
-                return $this->mobileAuthStatus();
-            }
-            return $this->goHome();
-        }
-
-        $model = new LoginForm();
-        if ($model->load(Yii::$app->request->post()) && $model->login(self::$sessionDuration)) {
-            if ($this->isMobileApp()) {
-                return $this->mobileAuthStatus();
-            }
-            return $this->goBack();
-        } else {
-            return $this->render('login', [
-                'model' => $model,
-            ]);
-        }
-    }
-
-    public function actionLogout()
-    {
-        Yii::$app->user->logout();
-
-        return $this->goHome();
-    }
-
-    public function actionContact()
-    {
-        $model = new ContactForm();
-        if ($model->load(Yii::$app->request->post()) && $model->validate()) {
-            if ($model->sendEmail(Yii::$app->params['adminEmail'])) {
-                Yii::$app->session->setFlash('success', 'Thank you for contacting us. We will respond to you as soon as possible.');
-            } else {
-                Yii::$app->session->setFlash('error', 'There was an error sending email.');
-            }
-
-            return $this->refresh();
-        } else {
-            return $this->render('contact', [
-                'model' => $model,
-            ]);
-        }
-    }
-
-    public function actionAbout()
-    {
-        return $this->render('about');
-    }
-
-    public function actionSignup()
-    {
-        if (!\Yii::$app->user->isGuest) {
-            if ($this->isMobileApp()) {
-                return $this->mobileAuthStatus();
-            }
-            return $this->goHome();
-        }
-
-        $model = new SignupForm();
+        $model = new AddMailForm();
         try {
             if ($model->load(Yii::$app->request->post())) {
-                if ($user = $model->signup()) {
-                    if (Yii::$app->getUser()->login($user, self::$sessionDuration)) {
-                        if ($this->isMobileApp()) {
-                            return $this->mobileAuthStatus();
-                        }
-                        return $this->goHome();
-                    }
+                $mail = $model->addNewMail();
+                if (!$mail->hasErrors()) {
+                        return $this->goPayForMail($mail);
                 }
-                if ($this->isMobileApp()) {
-                    return $this->mobileUnAuthStatus($model->getErrors());
+                elseif ($this->isMobileApp()) {
+                    return $this->mobileErrorStatus($mail->getErrors());
                 }
             }
         } catch (\Exception $e) {
             if ($this->isMobileApp()) {
-                return $this->mobileUnAuthStatus($e->getMessage());
+                return $this->mobileErrorStatus($e->getMessage());
             }
             else {
                 throw $e;
             }
         }
 
-        return $this->render('signup', [
+        return $this->render('add_mail', [
             'model' => $model,
         ]);
     }
 
-
-    public function actionRequestPasswordReset()
-    {
-        $model = new PasswordResetRequestForm();
-        if ($model->load(Yii::$app->request->post()) && $model->validate()) {
-            if ($model->sendEmail()) {
-                Yii::$app->getSession()->setFlash('success', 'Check your email for further instructions.');
-
-                return $this->goHome();
-            } else {
-                Yii::$app->getSession()->setFlash('error', 'Sorry, we are unable to reset password for email provided.');
-            }
-        }
-
-        return $this->render('requestPasswordResetToken', [
-            'model' => $model,
-        ]);
-    }
-
-    public function actionResetPassword($token)
-    {
-        try {
-            $model = new ResetPasswordForm($token);
-        } catch (InvalidParamException $e) {
-            throw new BadRequestHttpException($e->getMessage());
-        }
-
-        if ($model->load(Yii::$app->request->post()) && $model->validate() && $model->resetPassword()) {
-            Yii::$app->getSession()->setFlash('success', 'New password was saved.');
-
-            return $this->goHome();
-        }
-
-        return $this->render('resetPassword', [
-            'model' => $model,
-        ]);
-    }
 }

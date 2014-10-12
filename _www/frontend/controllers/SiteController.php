@@ -79,7 +79,7 @@ class SiteController extends \common\controllers\BaseController
         }
 
         $model = new LoginForm();
-        if ($model->load(Yii::$app->request->post()) && $model->login()) {
+        if ($model->load(Yii::$app->request->post()) && $model->login(self::$sessionDuration)) {
             if ($this->isMobileApp()) {
                 return $this->mobileAuthStatus();
             }
@@ -134,7 +134,7 @@ class SiteController extends \common\controllers\BaseController
         try {
             if ($model->load(Yii::$app->request->post())) {
                 if ($user = $model->signup()) {
-                    if (Yii::$app->getUser()->login($user)) {
+                    if (Yii::$app->getUser()->login($user, self::$sessionDuration)) {
                         if ($this->isMobileApp()) {
                             return $this->mobileAuthStatus();
                         }
@@ -158,6 +158,7 @@ class SiteController extends \common\controllers\BaseController
             'model' => $model,
         ]);
     }
+
 
     public function actionRequestPasswordReset()
     {

@@ -16,6 +16,9 @@ return [
             'identityClass' => 'common\models\User',
             'enableAutoLogin' => true,
         ],
+//        'session' => [
+//            'timeout' => 9999999999
+//        ],
         'log' => [
             'traceLevel' => YII_DEBUG ? 3 : 0,
             'targets' => [
@@ -34,13 +37,13 @@ return [
             'showScriptName' => false,
             'rules' => [
                 '' => 'site/index',
-                'login' => 'site/login',
-                'logout' => 'site/logout',
-                'signup' => 'site/signup',
+//                'login' => 'site/login',
+//                'logout' => 'site/logout',
+//                'signup' => 'site/signup',
 //                ['class' => 'yii\rest\UrlRule', 'controller' => 'site'],
 //                'module/<module:\w+>/<controller:\w+>/<action:\w+>' => '<module>/<controller>/<action>',
-//                '<controller:\w+>/<action:\w+>' => '<controller>/<action>',
-//                'site/<action:\w+>' => '<action>',
+                '<action:\w+>' => 'site/<action>',
+                '<controller:\w+>/<action:\w+>' => '<controller>/<action>',
             ],
         ),
     ],

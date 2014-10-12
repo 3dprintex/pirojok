@@ -11,6 +11,12 @@ class BaseController extends Controller
 {
     const MOB_STATUS_AUTH = 'auth';
     const MOB_STATUS_UNAUTH = 'unauth';
+    const MOB_STATUS_ERROR = 'error';
+    const MOB_STATUS_SUCCESS = 'success';
+
+    const URL_MAIL_PAY = '/mail/pay/';
+
+    public static $sessionDuration = 99999999;
 
     public function beforeAction($action)
     {
@@ -76,7 +82,39 @@ class BaseController extends Controller
         return Json::encode($data);
     }
 
+
+    public function mobileOkStatus($data) {
+        $data = [
+            'status' => self::MOB_STATUS_SUCCESS,
+            'data' => $data
+        ];
+        return Json::encode($data);
+    }
+
+
+    public function mobileErrorStatus($mess) {
+        $data = [
+            'status' => self::MOB_STATUS_ERROR,
+            'desc' => $mess
+        ];
+        return Json::encode($data);
+    }
+
     public function getUserObject() {
         return \common\models\User::findIdentity(Yii::$app->getUser()->id);
+    }
+
+
+    /**
+     * @param $mail \common\models\Mail
+     * @return string|array
+     */
+    public function goPayForMail(\common\models\Mail $mail)
+    {
+        if ($this->isMobileApp()) {
+            $data = $mail->getDataInfo();
+            return $this->mobileOkStatus($data);
+        }
+        return Yii::$app->getResponse()->redirect(self::URL_MAIL_PAY.$mail->id);
     }
 }
