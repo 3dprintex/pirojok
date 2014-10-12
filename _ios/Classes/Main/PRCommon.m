@@ -8,10 +8,11 @@
 
 #import "PRCommon.h"
 
-NSString *kDomine = @"pirojok.i/";
+NSString *kDomine = @"93.158.189.30/";
 NSString *kProtocol = @"http://";
 NSString *kSignUp = @"signup";
 NSString *kSignIn = @"login";
+NSString *kSendMessage = @"mail/add";
 const NSTimeInterval kActivityTimerInterval = 3;
 
 CGRect CGRectRoundOrigin(CGRect rect) {

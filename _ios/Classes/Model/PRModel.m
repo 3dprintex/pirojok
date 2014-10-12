@@ -40,6 +40,32 @@ static PRModel *_sharedInstance = nil;
     return self;
 }
 
+-(void)sendMessage:(PRMessageData *)message completion:(void(^)(BOOL success, NSString *message))completion {
+    void(^invokeCompletion)(BOOL success, NSString *message) = ^(BOOL success, NSString *message) {
+        if (completion) {
+            completion(success, message);
+        }
+    };
+    [self.network getWithUrlString:kSendMessage onSuccess:^(PRResponseData *responseData) {
+        if ([self _csrfObtain:responseData.getJSONData]) {
+            [self.network postWithUrlString:kSendMessage onSuccess:^(PRResponseData *responseData) {
+                NSDictionary *result = responseData.getJSONData;
+                if ([result[@"status"] isEqualToString:@"success"]) {
+                    invokeCompletion(YES, nil);
+                } else {
+                    invokeCompletion(NO, [NSString stringWithFormat:@"%@", result[@"desc"]]);
+                }
+            } onError:^(NSError *error) {
+                invokeCompletion(NO, nil);
+            } requestData:message];
+        } else {
+            invokeCompletion(NO, nil);
+        }
+    } onError:^(NSError *error) {
+        invokeCompletion(NO, nil);
+    }];
+}
+
 -(void)signUpWithLogin:(NSString *)login andPassword:(NSString *)password andUsername:(NSString *)username completion:(void(^)(BOOL success))completion {
     PRSignUpData *data = [[PRSignUpData alloc] init];
     data.email = login;
@@ -109,6 +135,10 @@ static PRModel *_sharedInstance = nil;
         }
         _isAuthorized = NO;
     }];
+}
+
+-(void)createMessage {
+    _sendingMessage = [[PRMessageData alloc] init];
 }
 
 #pragma mark - internal methods

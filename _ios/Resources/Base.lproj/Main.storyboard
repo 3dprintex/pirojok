@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6245" systemVersion="14A388a" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="Cz8-Is-wks">
     <dependencies>
-        <deployment defaultVersion="1808" identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6238"/>
     </dependencies>
     <scenes>
@@ -27,7 +26,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="183" y="703"/>
+            <point key="canvasLocation" x="697" y="-1465"/>
         </scene>
         <!--ReceiveVC-->
         <scene sceneID="rT0-6S-fCj">
@@ -42,7 +41,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="t2r-iA-FXE" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="184" y="1408"/>
+            <point key="canvasLocation" x="185" y="744"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Rl1-7K-LyW">
@@ -74,9 +73,6 @@
                                 <state key="normal" title="Отправить">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
-                                <connections>
-                                    <segue destination="vXZ-lx-hvc" kind="push" id="ukC-ma-dXS"/>
-                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="jlO-g6-lwQ">
                                 <rect key="frame" x="126" y="322" width="68" height="30"/>
@@ -86,6 +82,16 @@
                                 </state>
                                 <connections>
                                     <segue destination="sXL-mz-nAG" kind="push" id="6GO-aT-zZe"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="0KW-up-Q5Q">
+                                <rect key="frame" x="130" y="138" width="60" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Создать">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="yMO-Wj-Rub" kind="push" id="P3g-Xe-yGS"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -99,6 +105,96 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HwV-3R-SXM" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-504" y="353"/>
+        </scene>
+        <!--CreateVC-->
+        <scene sceneID="yeH-wH-uLq">
+            <objects>
+                <viewController id="yMO-Wj-Rub" customClass="PRCreateVC" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="jhJ-eh-QWJ">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="FVj-ik-ten">
+                                <rect key="frame" x="115" y="140" width="90" height="85"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="1" green="0.73414352059999999" blue="0.30441329230000003" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="Фото"/>
+                                <connections>
+                                    <segue destination="UC4-Op-HcE" kind="push" id="jhs-ZH-oLB"/>
+                                </connections>
+                            </button>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="QZI-Od-rbr">
+                                <rect key="frame" x="0.0" y="69" width="320" height="63"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.90196078430000004" green="0.92549019610000005" blue="0.94509803920000002" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="VQh-uu-Xb4">
+                                <rect key="frame" x="122" y="233" width="77" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Отправить">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="_send:" destination="yMO-Wj-Rub" eventType="touchUpInside" id="8cv-og-vXX"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="fIR-2R-e8y"/>
+                    <connections>
+                        <outlet property="photoView" destination="FVj-ik-ten" id="MF7-vB-Hrr"/>
+                        <outlet property="text" destination="QZI-Od-rbr" id="csx-Hm-9lW"/>
+                        <segue destination="vXZ-lx-hvc" kind="push" identifier="send" id="JQ6-Q5-1jH"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="nkK-3L-ONn" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="185" y="-701"/>
+        </scene>
+        <!--PhotoVC-->
+        <scene sceneID="KOH-Kd-R2v">
+            <objects>
+                <viewController id="UC4-Op-HcE" customClass="PRPhotoVC" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="gTX-ke-gH4">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" id="u2N-bL-gae">
+                                <rect key="frame" x="0.0" y="379" width="320" height="189"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="rEn-1l-dyU">
+                                        <rect key="frame" x="94" y="35" width="132" height="30"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <state key="normal" title="Фотографировать">
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="_buttonTap:" destination="UC4-Op-HcE" eventType="touchUpInside" id="NWH-KF-LZd"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" red="0.90196078430000004" green="0.92549019610000005" blue="0.94509803920000002" alpha="1" colorSpace="calibratedRGB"/>
+                            </view>
+                            <view contentMode="scaleToFill" id="6Lm-Zi-aqR">
+                                <rect key="frame" x="0.0" y="68" width="320" height="309"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="1" green="0.73414352059999999" blue="0.30441329230000003" alpha="1" colorSpace="calibratedRGB"/>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="thU-Cd-Crg"/>
+                    <connections>
+                        <outlet property="photoView" destination="6Lm-Zi-aqR" id="PcP-3d-qo8"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="fyI-lW-i4Y" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="697" y="-701"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="akO-2L-OIr">

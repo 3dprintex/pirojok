@@ -12,6 +12,9 @@
 		DE02AB9E19E9ACA200433556 /* PRActivity.m in Sources */ = {isa = PBXBuildFile; fileRef = DE02AB9D19E9ACA200433556 /* PRActivity.m */; };
 		DE02ABA019E9B52C00433556 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DE02AB9F19E9B52C00433556 /* CoreGraphics.framework */; };
 		DE02ABA719E9B79000433556 /* PRUser.m in Sources */ = {isa = PBXBuildFile; fileRef = DE02ABA619E9B79000433556 /* PRUser.m */; };
+		DE02ABAA19E9D00700433556 /* PRCreateVC.m in Sources */ = {isa = PBXBuildFile; fileRef = DE02ABA919E9D00700433556 /* PRCreateVC.m */; };
+		DE02ABAD19E9D01E00433556 /* PRPhotoVC.m in Sources */ = {isa = PBXBuildFile; fileRef = DE02ABAC19E9D01E00433556 /* PRPhotoVC.m */; };
+		DE02ABB119E9D56700433556 /* PRMessageData.m in Sources */ = {isa = PBXBuildFile; fileRef = DE02ABB019E9D56700433556 /* PRMessageData.m */; };
 		DE2B729B19E92D1B0072F59A /* bitstream.c in Sources */ = {isa = PBXBuildFile; fileRef = DE2B728B19E92D1B0072F59A /* bitstream.c */; };
 		DE2B729C19E92D1B0072F59A /* mask.c in Sources */ = {isa = PBXBuildFile; fileRef = DE2B728D19E92D1B0072F59A /* mask.c */; };
 		DE2B729D19E92D1B0072F59A /* qrencode.c in Sources */ = {isa = PBXBuildFile; fileRef = DE2B728F19E92D1B0072F59A /* qrencode.c */; };
@@ -52,6 +55,12 @@
 		DE02AB9F19E9B52C00433556 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		DE02ABA519E9B79000433556 /* PRUser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PRUser.h; sourceTree = "<group>"; };
 		DE02ABA619E9B79000433556 /* PRUser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PRUser.m; sourceTree = "<group>"; };
+		DE02ABA819E9D00700433556 /* PRCreateVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PRCreateVC.h; sourceTree = "<group>"; };
+		DE02ABA919E9D00700433556 /* PRCreateVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PRCreateVC.m; sourceTree = "<group>"; };
+		DE02ABAB19E9D01E00433556 /* PRPhotoVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PRPhotoVC.h; sourceTree = "<group>"; };
+		DE02ABAC19E9D01E00433556 /* PRPhotoVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PRPhotoVC.m; sourceTree = "<group>"; };
+		DE02ABAF19E9D56700433556 /* PRMessageData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PRMessageData.h; sourceTree = "<group>"; };
+		DE02ABB019E9D56700433556 /* PRMessageData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PRMessageData.m; sourceTree = "<group>"; };
 		DE2B728B19E92D1B0072F59A /* bitstream.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = bitstream.c; sourceTree = "<group>"; };
 		DE2B728C19E92D1B0072F59A /* bitstream.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = bitstream.h; sourceTree = "<group>"; };
 		DE2B728D19E92D1B0072F59A /* mask.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = mask.c; sourceTree = "<group>"; };
@@ -135,6 +144,8 @@
 			children = (
 				DE02ABA519E9B79000433556 /* PRUser.h */,
 				DE02ABA619E9B79000433556 /* PRUser.m */,
+				DE02ABAF19E9D56700433556 /* PRMessageData.h */,
+				DE02ABB019E9D56700433556 /* PRMessageData.m */,
 			);
 			path = Objects;
 			sourceTree = "<group>";
@@ -303,6 +314,10 @@
 				DE69D20C19E94F4E007FCB9A /* PRSignUpVC.m */,
 				DE02AB9519E9AC5E00433556 /* PRBaseVC.h */,
 				DE02AB9619E9AC5E00433556 /* PRBaseVC.m */,
+				DE02ABA819E9D00700433556 /* PRCreateVC.h */,
+				DE02ABA919E9D00700433556 /* PRCreateVC.m */,
+				DE02ABAB19E9D01E00433556 /* PRPhotoVC.h */,
+				DE02ABAC19E9D01E00433556 /* PRPhotoVC.m */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -393,12 +408,15 @@
 				DE2B729E19E92D1B0072F59A /* qrinput.c in Sources */,
 				DE4ED45519E97EBB00E7D4FD /* PRResponseData.m in Sources */,
 				DE02ABA719E9B79000433556 /* PRUser.m in Sources */,
+				DE02ABAD19E9D01E00433556 /* PRPhotoVC.m in Sources */,
+				DE02ABAA19E9D00700433556 /* PRCreateVC.m in Sources */,
 				DE2B72A219E92D1B0072F59A /* UIImage+MDQRCode.m in Sources */,
 				DE4ED45319E97EBB00E7D4FD /* PRRequest.m in Sources */,
 				DE4ED45F19E9811200E7D4FD /* NSString+URLEncoding.m in Sources */,
 				DE2B729C19E92D1B0072F59A /* mask.c in Sources */,
 				DE02AB9E19E9ACA200433556 /* PRActivity.m in Sources */,
 				DECCD3AD19E927E300EC0B4E /* PRSendVC.m in Sources */,
+				DE02ABB119E9D56700433556 /* PRMessageData.m in Sources */,
 				DE2B72A019E92D1B0072F59A /* rscode.c in Sources */,
 				DECCD3AC19E927E300EC0B4E /* main.m in Sources */,
 				DE4ED45419E97EBB00E7D4FD /* PRRequestData.m in Sources */,

@@ -13,6 +13,7 @@ extern NSString *kDomine;
 extern NSString *kProtocol;
 extern NSString *kSignUp;
 extern NSString *kSignIn;
+extern NSString *kSendMessage;
 extern const NSTimeInterval kActivityTimerInterval;
 
 CGRect CGRectRoundOrigin(CGRect rect);
