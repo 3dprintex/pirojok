@@ -4,11 +4,13 @@ $this->title = 'My Yii Application';
 ?>
 <div class="site-index">
 
+    <?php if (!\Yii::$app->user->isGuest) {?>
     <div class="jumbotron">
         <h1>Pirojki!</h1>
         <p><a class="btn btn-lg btn-success" href="mail/add">Создать сообщение</a></p>
+        <p><a class="btn btn-lg btn-success" href="mailgrid/index">Все сообщения</a></p>
     </div>
-
+    <?php }    ?>
     <div class="body-content">
 
         <div class="row">
